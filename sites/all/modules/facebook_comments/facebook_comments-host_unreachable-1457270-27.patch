@@ -1,0 +1,14 @@
+diff --git a/facebook_comments.module b/facebook_comments.module
+index ab967ad..33f7f10 100644
+--- a/facebook_comments.module
++++ b/facebook_comments.module
+@@ -349,8 +349,7 @@ function facebook_comments_display($width, $amount, $fluid = 0) {
+     $class = "";
+   }
+   // Generate the URL
+-  global $base_url;
+-  $url = $base_url . drupal_get_path_alias(request_uri());
++  $url = url(request_path(), array('absolute' => TRUE));
+   // Add user defined settings
+   $style = variable_get('facebook_comments_style', 'light');
+   $output = '<div id="fb-root"></div>

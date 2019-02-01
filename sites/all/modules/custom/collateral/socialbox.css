@@ -1,0 +1,220 @@
+#social-sidebar{
+    width:300px;
+    height:415px;
+}
+.social-sidebar-icons{
+    height:25px;
+}
+.social-box-icon{
+    width:45px;
+    height:25px;
+    float:left;
+}
+.social-box-icon.fb{
+    background:url("/sites/all/themes/collateralbmx/images/social-bar-sprite.png") repeat scroll 0 0 transparent;
+}
+.social-box-icon.fb.active{ 
+    background:url("/sites/all/themes/collateralbmx/images/social-bar-sprite.png") repeat scroll 0 -25px transparent;
+}
+.social-box-icon.tw{
+    background:url("/sites/all/themes/collateralbmx/images/social-bar-sprite.png") repeat scroll -45px 0 transparent;
+}
+.social-box-icon.tw.active{
+    background:url("/sites/all/themes/collateralbmx/images/social-bar-sprite.png") repeat scroll -45px -25px transparent;
+}
+.social-box-icon.ig{
+    background:url("/sites/all/themes/collateralbmx/images/social-bar-sprite.png") repeat scroll -90px 0 transparent;
+}
+.social-box-icon.ig.active{
+    background:url("/sites/all/themes/collateralbmx/images/social-bar-sprite.png") repeat scroll -90px -25px transparent;
+}
+.social-box-icon.yt{
+    background:url("/sites/all/themes/collateralbmx/images/social-bar-sprite.png") repeat scroll -136px 0 transparent;
+    width:42px;
+}
+.social-box-icon.yt.active{
+    background:url("/sites/all/themes/collateralbmx/images/social-bar-sprite.png") repeat scroll -136px -25px transparent;
+    width:42px;
+}
+.social-box-icon.rss{
+    background:url("/sites/all/themes/collateralbmx/images/social-bar-sprite.png") repeat scroll -178px 0 transparent;
+    width:40px;
+}
+.social-box-icon.rss.active{
+    background:url("/sites/all/themes/collateralbmx/images/social-bar-sprite.png") repeat scroll -178px -25px transparent;
+    width:40px;
+}
+.social-box-icon.sub{
+    background:url("/sites/all/themes/collateralbmx/images/social-bar-sprite.png") repeat scroll -218px 0 transparent;
+    width:42px;
+}
+.social-box-icon.sub.active{
+    background:url("/sites/all/themes/collateralbmx/images/social-bar-sprite.png") repeat scroll -218px -25px transparent;
+    width:42px;
+}
+.social-box-icon.blank{
+/*
+    background:url("/sites/all/themes/collateralbmx/images/social-bar-sprite.png") repeat scroll -260px 0 transparent;
+*/
+    width: 127px;
+    border-right: 2px solid #D8D8D8;
+    border-bottom: 1px solid #D8D8D8;
+    border-top: 1px solid #D8D8D8;
+    height: 23px;
+    border-left: 1px solid #D8D8D8;
+}
+.social-box-content{
+    display:none;
+    float:left;
+    width:300px;
+    height:350px;
+    position:relative;
+}
+.social-box-content.active{
+    display:block;
+    position:relative;
+}
+.social-sidebar-content-container{
+    border-right:2px solid #D8D8D8;
+    border-left:2px solid #D8D8D8;
+    border-bottom:2px solid #D8D8D8;
+    width: 295px;
+    height:350px;
+    overflow:hidden;
+}
+.social-bar-yt-sub{
+    margin: 10px 10px 10px 65px;
+}
+.instagram-logo{
+    line-height: 35px;
+    float: right;
+    margin-right: 10px;
+    margin-top: 3px;
+}
+.instagram-container{
+    margin-left: 15px;
+    margin-top: 15px;
+}
+.loading_gif{
+    margin-left: 130px;
+    margin-top: 145px;
+}
+.follow_btn a {
+    color: #000000;
+    float: right;
+    font-size: 10px;
+    line-height: 16px;
+    margin: 4px 10px 0 0;
+    text-decoration: none;
+}
+.follow_btn a:hover{
+    text-decoration:underline;
+}
+
+.follow_btn img {
+    padding-right: 5px;
+}
+
+.social-box-latest-headlines{
+    font-size: 17px;
+    padding:10px 10px 10px 0;
+}
+.social-box-content.rss{
+    padding:0 15px;
+    width:275px;
+}
+.social-box-content.rss li{
+    line-height:20px;
+    padding-left:15px;
+}
+.social-box-content.rss ul li.active{
+    background: url("/sites/all/themes/collateralbmx/images/square_bullet.gif") no-repeat scroll 0 7px transparent;
+
+}
+.social-box-content.rss li a{
+    font-weight:bold;
+    text-decoration:none;
+    font-size:10px;
+    color:#000;
+}
+.social-box-content.rss li a:hover{
+    text-decoration:underline;
+}
+.social-box-content.rss ul{
+    list-style:none;
+    margin-bottom:0;
+}
+#player a, .social-box-latest-headlines{
+    color: #373737;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+    text-decoration: none;
+    text-shadow: 3px 3px 1px #B8B8B8;
+}
+
+
+#player {
+    background: url("/sites/default/files/mid-bar-bkg.jpg") repeat-x scroll 0 0 transparent;
+    border-bottom: 2px solid #D8D8D8;
+    height: 290px;
+    overflow: hidden;
+    width: 296px;
+    padding-top:10px;
+}
+#player p{
+    margin:0;
+
+}
+#player a{
+    font-size: 12px;
+    margin-bottom: 15px;
+
+}
+#player a:hover{
+    text-decoration:underline;
+}
+.youtube .carousel {
+    width: 290px;
+    height: 100%;
+    overflow: auto;
+    z-index: 3;
+}
+
+.youtube .thumbnail {
+    margin: 2px;
+    width: 100px;
+    border: 1px solid black;
+}
+
+.youtube iframe.player {
+    width: 100px;
+    overflow: auto;
+    border: 0;
+}
+.yt-descript {
+    color: #000;   
+    display:block;
+    height:100px;
+}
+.carItemContain{
+    height:100px;
+}
+.follow_btn{
+    position:relative;
+}
+.rss_tiny{
+    font-size:9px;
+    display:none;
+}
+.rss_tiny.active{
+    display:block;
+}
+.rss_tiny_title{
+    font-weight:bold;
+}
+.rss_tiny_preview_container{
+    height:65px;
+    width:100%;
+}

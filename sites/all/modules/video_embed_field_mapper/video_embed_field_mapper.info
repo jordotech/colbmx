@@ -1,0 +1,7 @@
+name = Video Embed Field Mapper
+description = Provides a mapper for the Video Embed Field when using Feeds.
+core = 7.x
+package = Views
+dependencies[] = feeds
+dependencies[] = video_embed_field
+files[] = video_embed_field_mapper.module

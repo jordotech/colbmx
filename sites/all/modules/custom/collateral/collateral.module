@@ -1,0 +1,360 @@
+<?php
+
+function collateral_js_alter(&$javascript) {
+    /*
+      if(!isset($javascript['sites/all/libraries/colorbox/colorbox/jquery.colorbox-min.js'])){
+      drupal_add_js('sites/all/libraries/colorbox/colorbox/jquery.colorbox-min.js');
+      drupal_add_js('sites/all/modules/colorbox/js/colorbox.js');
+      drupal_add_js('sites/all/modules/colorbox/js/default/colorbox_style.js');
+      } */
+    if (drupal_is_front_page() && isset($javascript['sites/all/modules/views_slideshow/contrib/views_slideshow_cycle/js/views_slideshow_cycle.js'])) {
+        $javascript['sites/all/modules/views_slideshow/contrib/views_slideshow_cycle/js/views_slideshow_cycle.js']['data'] = 'sites/all/modules/custom/collateral/collateral_cycle.js';
+    }
+}
+
+function collateral_css_alter(&$css) {
+    if (isset($css['sites/all/themes/collateralbmx/css/global.css'])) {
+        module_invoke('admin_menu', 'suppress'); //don't show the admin_menu when using this theme
+        drupal_add_js(drupal_get_path('module', 'collateral') . '/collateral-front.js');
+    }
+    $css['sites/all/libraries/superfish/style/default.css'] = array(
+        'type' => 'file',
+        'group' => 0,
+        'weight' => 0.023,
+        'every_page' => false,
+        'media' => 'all',
+        'preprocess' => true,
+        'data' => 'sites/all/themes/collateralbmx/css/sf-default.css',
+        'browsers' =>
+        array(
+            'IE' => true,
+            '!IE' => true,
+        ),
+    );
+}
+
+function collateral_footer_block_visibility($bid = NULL) {
+    if (arg(0) == 'node' && is_numeric(arg(1))) {
+        $node = node_load(arg(1));
+        $node_type = $node->type;
+    } else {
+        $node_type = false;
+    }
+    if ($node_type == 'blog') {
+        return true;
+    }
+    return false;
+}
+
+function collateral_sidebar_block_visibility($bid = NULL) {
+    if (arg(0) == 'node' && is_numeric(arg(1))) {
+        $node = node_load(arg(1));
+        $node_type = $node->type;
+    } else {
+        $node_type = false;
+    }
+    if (
+            drupal_is_front_page()
+            || ($node_type == 'blog')
+            || (arg(0) == 'taxonomy' && is_numeric(arg(2)))
+            || arg(0) == 'featured'
+    ) {
+        return true;
+    }
+    return false;
+}
+
+function collateral_init() {
+    drupal_add_js(drupal_get_path('theme', 'collateralbmx') . '/js/social_box.js');
+    drupal_add_js('./sites/all/libraries/easySlider1.7.js');
+    drupal_add_js('./sites/all/libraries/jquery.easing/jquery.easing.min.js');
+    drupal_add_library('system', 'ui.resizable');
+    drupal_add_css(drupal_get_path('module', 'collateral') . '/socialbox.css');
+    drupal_add_css(drupal_get_path('module', 'collateral') . '/collateral-backend.css');
+    drupal_add_css(drupal_get_path('module', 'jquery_ui') . '/jquery.ui/css/no-theme/jquery-ui-1.9.2.custom.css');
+    drupal_add_js(drupal_get_path('module', 'collateral') . '/collateral.js');
+    if (function_exists('browscap_get_browser')) {
+        $browser = browscap_get_browser();
+        if (isset($browser['ismobiledevice'])) {
+            if ($browser['ismobiledevice'] == 'true' || $browser['ismobiledevice'] == 1) {
+                drupal_add_js('$(document).ready(function(){collateral.doMobile()})', 'inline');
+                if (stristr($browser['useragent'], 'iPhone') || stristr($browser['useragent'], 'Android')) {
+                    drupal_add_js('$(document).ready(function(){
+                        $("#featured-container").hide();
+                        $("#cats-slider-container").hide();
+                        $("#mobile-slider-container").show();
+                        collateral.startFeaturedSlideshow();
+})', 'inline');
+                }
+            }
+        }
+    }
+}
+
+function collateral_user_can_post_to($uid) {
+    $allowed_categories = array();
+    $query = db_select('users', 'u');
+    $query->leftJoin('field_data_field_can_post_to_', 'fdfcpt', 'u.uid = fdfcpt.entity_id');
+    $query->fields('fdfcpt', array('field_can_post_to__tid'));
+    $query->condition('u.uid', $uid);
+    $result = $query->execute();
+    foreach ($result as $key => $value) {
+        if (is_numeric($value->field_can_post_to__tid)) {
+            $allowed_categories[$value->field_can_post_to__tid] = taxonomy_term_load($value->field_can_post_to__tid)->name;
+        }
+    }
+    return $allowed_categories;
+}
+
+function collateral_form_alter(&$form, &$form_state, $form_id) {
+
+    switch ($form_id) {
+        case 'search_block_form':
+            $form['actions']['submit']['#value'] = '';
+            $form['actions']['submit']['#attributes'] = array('class' => array('collateral-search-submit'));
+            $form['search_block_form']['#prefix'] = '<div class="collateral-search-box">';
+            $form['search_block_form']['#suffix'] = '</div>';
+            break;
+        case 'mailchimp_lists_user_subscribe_form_general':
+            $form['mailchimp_lists']['mailchimp_general']['mergevars']['EMAIL']['#size'] = 29;
+            $form['mailchimp_lists']['mailchimp_general']['mergevars']['EMAIL']['#attributes'] = array(
+                'onFocus' => 'if (this.value == "ENTER EMAIL ADDRESS") {this.value = "";}',
+                'onBlur' => 'if (this.value == "") {this.value = "ENTER EMAIL ADDRESS";}'
+            );
+            $form['mailchimp_lists']['mailchimp_general']['mergevars']['EMAIL']['#default_value'] = 'ENTER EMAIL ADDRESS';
+            $form['#prefix'] = '<div id="footer-wrap"><div class="fl">';
+            $form['#suffix'] = '</div>';
+            break;
+        case 'blog_node_form':
+            //$form['field_custom_video_embed']['und'][0]['#default_value'] = 'paste_embed';
+            //debug($form['field_custom_video_embed']['und'][0]['#default_value']);
+            $form['field_gallery1']['und']['#description'] = '<ul>
+        <li>Place cursor where you want to insert gallery link, copy and paste: ' . htmlentities('<div class="gallerytrigger">') . ' Your Text Here' . htmlentities('</div>') . '</li>
+        <li>Images uploaded to GALLERY below will be linked.</li>
+        (Note: You can add as many gallery images as you would like.)
+    </ul>';
+            $form['title']['#description'] = 'DO NOT USE APOSTROPHES - “no”<br/>
+Use capital letters and uniform punctuation – example: Macneil: Dom Mach – Yes Please<br/>
+Feel free create to your own uniform – example: Macneil – Dom Mach: Yes Please<br/>
+etc. etc. The possibilities are real limited.';
+            global $user;
+            $form['options']['status']['#title'] = 'Publish';
+            $form['revision_information']['#type'] = 'hidden';
+            if (!in_array('site manager', $user->roles)) {
+                $form['author']['#type'] = 'hidden';
+                $form['field_featured']['#type'] = 'hidden';
+                $form['field_rss_item']['#type'] = 'hidden';
+                $form['field_featured_img_crop']['#type'] = 'hidden';
+            }
+            if (in_array('writer', $user->roles)) {
+                $can_post_to = collateral_user_can_post_to($user->uid);
+                $form['field_category']['und']['#options'] = $can_post_to;
+                if (count($can_post_to) == 1) {
+                    $form['field_category']['und']['#default_value'] = current(array_keys($can_post_to));
+                }
+            }
+            $form['instructions'] = array(
+                '#type' => 'fieldset',
+                '#collapsible' => true,
+                '#tree' => true,
+                '#weight' => -20,
+                '#title' => t('Writer Instructions'),
+                '#collapsed' => true,
+            );
+            $instructions = include('instructions.inc');
+            $form['instructions']['markup'] = array(
+                '#markup' => $instructions,
+            );
+            break;
+    }
+}
+
+function collateral_social_buttons($node) {
+    $output = '';
+    global $base_url;
+    $alias = drupal_get_path_alias('node/' . $node->nid);
+    $output .= '<div class="teaser-social">';
+       
+
+$output .= '<div class="fb-like" data-href="' . $base_url . '/' . $alias.'" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>';
+
+
+$output .= '   <div class="tweetbutton">
+       
+      <a href="http://twitter.com/share" class="twitter-share-button twitter-count-horizontal" data-count="horizontal" data-text="' . $node->title . '" data-url="' . $base_url . '/' . $alias . '" data-via="collateralbmx">Tweet</a>
+      <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+   </div>';
+
+
+        $output .= '</div>';
+    return $output;
+}
+
+/**
+ * Implementation of hook_menu()
+ */
+function collateral_menu() {
+    $items['blog-feed'] = array(
+        'title' => 'Latest Entries from CollateralBMX',
+        'description' => 'Subscibe to the CollateralBMX blog',
+        'page callback' => 'collateral_rss_page',
+        'access callback' => TRUE,
+    );
+    return $items;
+}
+
+function collateral_blog_img_available($node) {
+    if (!empty($node->field_video_embed)) {
+        return $node->field_video_embed[$node->language][0]['thumbnail_path'];
+    } elseif (!empty($node->field_blog_image)) {
+        return $node->field_blog_image[$node->language][0]['uri'];
+    } elseif (!empty($node->field_blog_thumbnail)) {
+        return $node->field_blog_thumbnail[$node->language][0]['uri'];
+    } else {
+        return false;
+    }
+}
+
+function collateral_term_image($tid) {
+    if (is_numeric($tid)) {
+        $wrapper = entity_metadata_wrapper('taxonomy_term', $tid);
+        if (isset($wrapper->field_category_image)) {
+            $img_array = $wrapper->field_category_image->value();
+        } else {
+            return false;
+        }
+        return theme('image_style', array('style_name' => 'term_img', 'path' => $img_array['uri'], 'alt' => 'image alt', 'title' => 'title',));
+    }
+}
+
+function collateral_rss_page() {
+    $limit = 50;
+    $nids = collateral_return_feed_nids($limit, false);
+    $channel['title'] = t('!event_title updates', array('!event_title' => 'CollateralBMX'));
+    $channel['link'] = url('blog', array('absolute' => TRUE));
+    return node_feed($nids, $channel);
+}
+
+/*
+ * @param $limit
+ *   The number of posts to return
+ * @param $rss_items
+ *   Whether or not to return rss items, defaults to false.  @see field_rss_item
+ */
+
+function collateral_return_popular_nids($limit, $rss_items = false) {
+    $nids = array();
+    $query = db_select('node', 'n');
+    $query->leftJoin('field_data_field_popularity', 'fdfp', 'n.nid = fdfp.entity_id');
+    $query->condition('n.status', 1);
+    $query->condition('n.type', 'blog')
+            //->condition('n.type', 'page')
+            ->orderBy('field_popularity_radioactivity_energy', 'DESC')
+            ->fields('n', array('nid'))
+            ->fields('fdfp', array('field_popularity_radioactivity_energy'))
+            ->range(0, $limit);
+    $result = $query->execute();
+    foreach ($result as $key => $value) {
+        $nids[] = $value->nid;
+    }
+    return $nids;
+}
+
+/*
+ * @param $limit
+ *   The number of posts to return
+ * @param $rss_items
+ *   Whether or not to return rss items, defaults to false.  @see field_rss_item
+ * @param $tids
+ *   Optionally supply an array of category term id's i.e. the tid for news will only bring back news items.
+ */
+
+function collateral_return_feed_nids($limit, $rss_items = false, $tids = array()) {
+    $nids = array();
+    $query = db_select('node', 'n');
+    $query->leftJoin('field_data_field_rss_item', 'fdfri', 'n.nid = fdfri.entity_id');
+    $query->condition('n.status', 1);
+    if (count($tids) > 0) {
+        $query->leftJoin('field_data_field_category', 'fdfc', 'n.nid = fdfc.entity_id');
+        $query->condition('fdfc.field_category_tid', $tids, 'IN');
+    }
+    if (!$rss_items) {
+        $query->condition('fdfri.field_rss_item_value', 0);
+    }
+    $query->condition('n.type', 'blog')
+            ->orderBy('created', 'DESC')
+            ->fields('n', array('nid'))
+            ->range(0, $limit);
+    $result = $query->execute();
+    foreach ($result as $key => $value) {
+        $nids[] = $value->nid;
+    }
+    return $nids;
+}
+
+/*
+ * @param $limit
+ *   The number of posts to return
+ */
+
+function collateral_return_featured_nids($limit) {
+    $nids = array();
+    $query = db_select('node', 'n');
+    $query->leftJoin('field_data_field_featured', 'fdff', 'n.nid = fdff.entity_id');
+    $query->condition('n.status', 1);
+    $query->condition('fdff.field_featured_value', 'Yes');
+
+    $query->condition('n.type', 'blog')
+            ->orderBy('created', 'DESC')
+            ->fields('n', array('nid'))
+            ->range(0, $limit);
+    $result = $query->execute();
+    foreach ($result as $key => $value) {
+        $nids[] = $value->nid;
+    }
+    return $nids;
+}
+
+/*
+ * Implementation of hook_theme().
+ */
+
+function collateral_theme() {
+    return array(
+        'cat_pulldown_block' => array(
+            'variables' => array('tids' => NULL),
+        ),
+    );
+}
+
+function theme_cat_pulldown_block($vars) {
+    $output = '';
+    $tids = $vars['tids'];
+    if (count($tids) != 1) {
+        return false; // this can only contain one tid
+    }
+    $term = taxonomy_term_load($tids[0]);
+    $term_name = $term->name;
+    $output .= '<div id="cat-pulldown-block" class="term-' . $tids[0] . '">
+<div id ="shadow-text">' . $term_name . '</div><div class="cats-block-view-all">' . l('view all', 'taxonomy/term/' . $tids[0]) . '</div>        
+';
+    $nids = collateral_return_feed_nids(10, true, $tids);
+
+    foreach ($nids as $nid) {
+        $node = node_load($nid);
+        $trimmed_title = views_trim_text(array('max_length' => 75, 'word_boundary' => true, 'ellipsis' => '...'), $node->title);
+
+        $data = '<div class="latest-row">
+<span class="latest-title">' . l($trimmed_title, 'node/' . $node->nid, array('attributes' => array('title' => $node->title),))
+                . '</span></div>';
+        $rows[] = array('data' => array($data), 'class' => array('latest-row'));
+    }
+    $output .= theme('table', array('rows' => $rows));
+    $output .= '<div class="arrow-handle-term-' . $tids[0] . ' red-arrow ui-resizable-handle ui-resizable-s"></div>';
+    $output .= '</div>'; //#cat-pulldown-block
+    return $output;
+}
+
+function collateral_preprocess_page(&$vars) {
+    
+}

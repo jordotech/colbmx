@@ -1,0 +1,7 @@
+name = CollateralBMX
+description = Custom module for collateralbmx
+core = 7.x
+package = Collateral
+
+files[] = collateral.module
+dependencies[] = radioactivity

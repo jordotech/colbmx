@@ -1,0 +1,38 @@
+*{
+	font-style: normal;
+	font-size: 13px;
+}
+em{
+	font-style: italic;
+}
+#edit-body{
+	width:700px;
+}
+.cke_skin_kama .cke_button .cke_icon{
+}
+blockquote p {
+	border-bottom: 1px solid red;
+	border-top: 1px solid red;
+	color: #BCBEC0;
+       	font-family: futura;
+       	font-size: 20px;
+	padding:0;
+	font-style: normal;
+	line-height: 35px;
+	margin-bottom: 16px;
+	quotes: "«" "»" "\'" "\'";
+	font-weight:bold;
+}
+blockquote{
+	padding:0;
+	margin:0;
+}
+p a{
+	color:red;
+      	text-decoration:none;
+}
+p, p a{
+	font-size:16px;
+	line-height:24px;
+	font-family:futura;
+}

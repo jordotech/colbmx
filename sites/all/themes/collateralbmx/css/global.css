@@ -1,0 +1,1406 @@
+/* This file will hold styles for the mobile version of your website (mobile first). */
+/* This also can include ANY global CSS that applies site-wide. Unless overwritten by a more specific style rule, CSS declarations in global.css will apply site-wide. */
+p {
+    font-family: 'Futura W01 Book', 'Open Sans';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+}
+#page.backspread{
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    background:white;
+}
+.background-spread-img{
+    position:fixed;
+    z-index:-1000;
+}
+body.backspread {
+    background: url("/sites/all/themes/collateralbmx/images/tiogaskin.jpeg") no-repeat scroll 0 0 transparent;
+}
+body {
+    background: url('/sites/default/files/footer-bg-texture.gif');
+    background-repeat: repeat-x;
+    background-position:100% 100%; 
+    z-index: -2000;
+    
+}
+body.snapped{
+    margin-top:54px !important;
+}
+#abel {
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+#region-sidebar-second .block{
+    padding-bottom:20px;
+}
+#region-sidebar-second .fb-like{
+    width: 100%;
+    padding: 10px 0px;
+}
+.social-box-content.sub{
+    padding:15px;
+
+}
+.social-box-content.sub input{
+    width:170px;
+}
+#region-sidebar-second #bottom-blog-rule-teaser {
+    margin: 0px 0px 0px 125px;
+    background: url("/sites/all/themes/collateralbmx/images/three-of-diamonds.gif") no-repeat scroll 0 0 transparent;
+    height: 10px;
+    text-align: center;
+    width: 35px;
+    height: 30px;
+    float: left;
+    clear: both;
+}
+hr {
+    background: url('/sites/default/files/blog-bottom-rule.gif');
+    margin-bottom: 20px;
+    background-repeat: no-repeat;
+    height: 10px;
+    margin-left: 111px;
+    margin-right: 100px;
+}
+
+blockquote p {
+    font-family: 'Futura W01 Bold', 'Open Sans';
+    font-style: normal;
+    font-size: 20px;
+    line-height: 35px;
+    margin-bottom: 16px;
+    quotes: "«" "»" "'" "'";
+    color: red;
+    border-top: solid;
+    border-top-color: red;
+    border-top-width: 1px;
+    border-bottom: solid;
+    border-bottom-color: red;
+    border-bottom-width: 1px;
+    color: #bcbec0;
+}
+
+b, h5, strong, #opensans-bold {
+    font-family: 'Futura W01 Bold', 'Open Sans';
+    font-style: normal;
+    font-size: 13px;
+    line-height: 21px;
+    margin-bottom: 0px;
+}
+
+#section-header {
+    background: url("/sites/default/files/headerbkg.jpg") repeat-x scroll 0 0 #000;
+}
+
+#zone-menu-wrapper {
+    background:#000;
+    height: 54px;
+    display: block;
+    clear: both;
+    position: relative;
+    margin-top: -0px;
+    width:100%;
+    top:0;
+}
+#block-block-2 {
+    left: -20px;
+    position: relative;
+    margin-bottom: 0px;
+}
+
+#block-block-2 p{
+    margin-bottom: 0px;
+}
+
+#zone-branding {
+    position: relative;
+}
+
+#region-user-first {
+    float: left;
+    left: -6px;
+    position: relative;
+}
+
+#zone-preface-wrapper {
+    background-color: black;
+    background: url('/sites/default/files/mid-bar-bkg.jpg');
+    background-repeat:repeat-x;
+    /*height: 380px;*/
+    margin-bottom: 20px;
+}
+
+#bottom-blog-rule {
+    background: url('/sites/all/themes/collateralbmx/images/three-diamonds-long.gif');
+    margin-bottom: 30px;
+    background-repeat: no-repeat;
+    height: 10px;
+    margin-left: 111px;
+    margin-right: 100px;
+    margin-top: 30px;
+    clear:both;
+}
+#bottom-blog-rule-teaser {
+    margin-bottom:15px;
+    background: url("/sites/all/themes/collateralbmx/images/three-of-diamonds.gif") no-repeat scroll 0 0 transparent;
+    height: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 35px;
+}
+.blogteaser p, h6{
+    font-size: 13px;
+    line-height: 25px;
+}
+
+#blogteaser p:first-letter, #blogteaser h6:first-letter,
+.field-name-body h6:first-letter
+{
+    display: block;
+    float: left;
+    margin-top: 14px;
+    margin-left: -1px;
+    margin-right: 5px;
+    height: 35px;
+    font-size: 51px;
+    font-family: 'Futura W01 Bold', 'Open Sans';
+    font-style: normal;
+}
+#blogteaser p:first-line, #blogteaser h6:first-line,
+.field-name-body h6:first-line
+{
+    color:black;
+    font-family: 'Futura W01 Bold', 'Open Sans';
+    font-style: normal;
+    letter-spacing:1px;
+}
+#blogteaser {
+}
+h2, h1.title {
+    font-size: 24px;
+    line-height: 24px;
+    font-family: 'Futura W01 Book', 'Open Sans';
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 3px;
+}
+h2 a:link, h2 a:visited, h1.title a:link, h1.title a:visited{
+    color:black;
+    text-decoration:none;
+}
+h2 a:hover, h1.title a:hover{
+    color:red;
+
+}
+.view-id-home_page_teasers_page a:link, .view-id-home_page_teasers_page a:visited {
+    text-decoration: none;
+    color: black;
+}
+.view-id-home_page_teasers_page a:hover {
+    color: red;
+}
+#more a, #more a:link, #more a:hover{
+    color: red;
+    display: inline;
+}
+
+/* -------------- Contact Page ------------------*/
+.node-webform label {
+    float: left;
+    width: 180px;
+    font-family: 'Futura W01 Bold', 'Open Sans';
+    text-align: right;
+}
+
+.node-webform label p {
+    font-family: 'Futura W01 Book', 'Open Sans';
+    font-style: normal;
+    font-size: 13px;
+    line-height: 25px;
+}
+
+.webform-container-inline div.description, .form-item .description {
+    display: block;
+    margin-left: 194px;
+    margin-right: 20px;
+}
+
+.form-textarea-wrapper {
+    width: 402px;
+    margin-left: 193px;
+}
+
+.logo-img {
+    float: left;
+    padding-right: 20px;
+    position: relative;
+    left: -15px
+}
+
+#region-content {
+}
+
+#region-content img{
+    border: solid;
+    border-width: 1px;
+    border-color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#block-facebook-comments-facebook-comments {
+    margin-top: 20px;
+}
+#block-block-8 {
+    margin-bottom: 60px;
+}
+
+
+
+#blogname, #blogname a, #blogname a:link {
+    color: black;
+    font-size:12px;
+    font-family: 'Open Sans', 'Arial';
+    font-style: normal;
+    text-transform: uppercase;
+    text-decoration:none;
+}
+#blogname a:hover{
+    color: red;
+}
+#blogdate, #blogdate a, #blogdate a:link {
+    color: grey;
+
+    font-family: 'Open Sans', 'Arial';
+}
+
+#blogdate a:hover{
+    color: red;
+}
+
+h2.block-title, #shadow-text{
+    font-family: 'Futura W01 Bold', 'Open Sans';
+    color: #373737;
+    line-height:35px !important;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 22px;
+    margin-bottom: 15px;
+    text-shadow: 3px 3px 1px #b8b8b8;
+    filter: dropshadow(color=#b8b8b8, offx=3, offy=3);
+}
+
+.field-type-taxonomy-term-reference {
+    font-family: 'Futura W01 Book', 'Open Sans';
+    font-style: normal;
+    font-size: 13px;
+    line-height: 25px;
+    padding-bottom: 20px;
+}
+
+.field-type-taxonomy-term-reference .field-label {
+    color: #808080;
+    display: block;
+    float: left;
+    font-family: 'Futura W01 Book', 'Open Sans';
+    font-style: normal;
+    font-size: 13px;
+}
+.field-type-taxonomy-term-reference .field-item {
+    color: #808080;
+    display: block;
+    float: left;
+    padding-left: 5px;
+    font-family: 'Futura W01 Book', 'Open Sans';
+    font-style: normal;
+    font-size: 13px;
+}
+
+.field-name-field-blog-image {
+    padding-bottom: 0px;
+}
+
+.field-name-field-caption-long p {
+    background-color: black;
+    color: white;
+    width: 610px;
+    padding: 5px;
+    font-style:italic;
+    margin-top: -20px;
+}
+
+/* Related Article */
+#block-views-shred-biscuit-block, #block-views-shred-biscuit-block-1, #block-views-shred-biscuit-block-2 img {
+    width: 300px;
+    padding-bottom: 20px;
+}
+
+#top-summary-container{
+    width: 300px;
+    float: left;
+    margin-bottom: 5px;
+    overflow: visible;
+}
+#top-summary-image {
+    float: left;
+    padding-right:5px;
+}
+
+#top-summary-text{
+    font-family: 'Futura W01 Book', 'Open Sans';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    float: left;
+    display: block;
+    width: 152px;
+    vertical-align: top;
+}
+
+#top-summary-body p{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    display: inline;
+}
+
+#top-summary-body a{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 15px;
+    text-decoration: none;
+    display: inline;
+    color:black;
+}
+
+#top-summary-title a{
+    font-family: 'Futura W01 Bold', 'Open Sans';
+    font-size: 12px;
+    line-height: 14px;
+    text-decoration: none;
+    display: inline;
+    color:black;
+}
+
+#block-views-shred-biscuit-block img, #block-views-shred-biscuit-block-1 img, #block-views-shred-biscuit-block-2 img{
+    border: solid;
+    border-width: 1px;
+    border-color: black;
+    margin-right: 8px;
+    margin-bottom: 5px;
+}
+
+
+/* Related Article */
+#block-views-related-articles-block {
+    width: 640px;
+    padding-bottom: 50px;
+}
+
+#related-article-container{
+    width: 140px;
+    float: left;
+    margin-right: 20px;
+    overflow: visible;
+}
+
+#related-article-text{
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 15px;
+}
+
+#related-article-body p{
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 15px;
+    display: inline;
+}
+
+#related-article-body a{
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 15px;
+    text-decoration: none;
+    display: inline;
+    color:black;
+}
+
+#related-article-title a{
+    font-family: 'Futura W01 Bold', 'Open Sans';
+    font-style: normal;
+    font-size: 13px;
+    line-height: 15x;
+    text-decoration: none;
+    display: inline;
+    color:black;
+}
+
+#block-views-related-articles-block img{
+    border: solid;
+    border-width: 1px;
+    border-color: black;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+#menu-bottom-left{
+    float: left;
+    display: block;
+    height: 22px;
+} 
+
+#menu-bottom-left a{
+    font-family: 'Futura W01 Book', 'Open Sans';
+    font-style: normal;
+    font-size: 10px;
+    float: left;
+    color:	#636466;
+    display: block;
+    padding-right: 40px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#copyright-bottom {
+    font-family: 'Futura W01 Book', 'Open Sans';
+    font-style: normal;
+    font-size: 10px;
+    float: right;
+    color: #636466;
+    display: block;
+    text-transform: uppercase;
+}
+
+
+/* ---------- Sponsor Block ----------- */
+
+#block-views-sponsor-list-block a {
+    font-family: 'Futura W01 Book', 'Open Sans';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 15px;
+    text-decoration: none;
+    color:black;
+}
+/* Superfish Menu */
+#menu-420-1.hidden, #menu-661-1.hidden{
+    display:none;
+}
+#menu-236-1{
+    background:none;
+}
+#menu-236-1.snapped{
+    background: url("/sites/all/themes/collateralbmx/images/index-logo-small.png") no-repeat scroll 0 0 transparent;
+    height: 54px;
+
+}
+#menu-236-1.small{
+    width: 71px;
+}
+.sf-menu li {
+    height: 54px;
+}
+
+.sf-menu.sf-style-default {
+    float: left;
+    margin-bottom: 1em;
+    padding: 0;
+}
+.sf-menu.sf-style-default.sf-navbar {
+    width: 100%;
+}
+
+.sf-menu.sf-style-default a {
+    border-left: 0px solid #fff;
+    border-top: 0px solid #CFDEFF;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.sf-menu.sf-style-default a,
+.sf-menu.sf-style-default a:visited  {
+    color: white;
+    text-decoration: none;
+    font-family: 'Futura W01 ExtraBold', 'Open Sans';
+    text-transform: uppercase;
+    letter-spacing:2px;
+}
+.sf-menu.sf-style-default a.sf-with-ul {
+    padding-right: 2.25em;
+}
+.sf-menu.sf-style-default.rtl a.sf-with-ul {
+    padding-left: 2.25em;
+    padding-right: 1em;
+}
+.sf-menu.sf-style-default span.sf-description {
+    color: #13a;
+    display: block;
+    font-size: 0.8em;
+    line-height: 1.5em;
+    margin: 5px 0 0 5px;
+    padding: 0;
+}
+
+.sf-menu.sf-style-default li li li {
+    background: #9AAEDB;
+}
+.sf-menu.sf-style-default li:hover,
+.sf-menu.sf-style-default li.sfHover,
+.sf-menu.sf-style-default a:focus,
+.sf-menu.sf-style-default a:hover,
+.sf-menu.sf-style-default a:active {
+    background: #141414;
+    outline: 0;
+}
+
+.sf-menu.sf-style-default ul.sf-megamenu li.sf-megamenu-wrapper ol,
+.sf-menu.sf-style-default ul.sf-megamenu li.sf-megamenu-wrapper ol li {
+    margin: 0;
+    padding: 0;
+}
+.sf-menu.sf-style-default ul.sf-megamenu li.sf-megamenu-wrapper a.menuparent {
+    font-weight: bold;
+}
+.sf-menu.sf-style-default ul.sf-megamenu li.sf-megamenu-wrapper ol li.sf-megamenu-column {
+    display: inline;
+    float: left;
+    width: 12em;
+}
+.sf-menu.sf-style-default.rtl ul.sf-megamenu li.sf-megamenu-wrapper ol li.sf-megamenu-column {
+    float: right;
+}
+.sf-menu.sf-style-default li.sf-parent-children-1 ul.sf-megamenu {
+    width: 12em;
+}
+.sf-menu.sf-style-default li.sf-parent-children-2 ul.sf-megamenu {
+    width: 24em;
+}
+.sf-menu.sf-style-default li.sf-parent-children-3 ul.sf-megamenu {
+    width: 36em;
+}
+.sf-menu.sf-style-default li.sf-parent-children-4 ul.sf-megamenu {
+    width: 48em;
+}
+.sf-menu.sf-style-default li.sf-parent-children-5 ul.sf-megamenu {
+    width: 60em;
+}
+.sf-menu.sf-style-default li.sf-parent-children-6 ul.sf-megamenu {
+    width: 72em;
+}
+.sf-menu.sf-style-default li.sf-parent-children-7 ul.sf-megamenu {
+    width: 84em;
+}
+.sf-menu.sf-style-default li.sf-parent-children-8 ul.sf-megamenu {
+    width: 96em;
+}
+.sf-menu.sf-style-default li.sf-parent-children-9 ul.sf-megamenu {
+    width: 108em;
+}
+.sf-menu.sf-style-default li.sf-parent-children-10 ul.sf-megamenu {
+    width: 120em;}
+.sf-menu li li:hover > ul,
+.sf-menu li li.sfHover > ul {
+    left: 12em;
+    top: 0;
+}
+.sf-menu a.sf-with-ul {
+    min-width: 1px;
+}
+.sf-sub-indicator {
+    background: url('../images/arrows-ffffff.png') no-repeat -10px -100px;
+    display: block;
+    height: 10px;
+    overflow: hidden;
+    position: absolute;
+    right: 0.75em;
+    text-indent: -999em;
+    top: 1.05em;
+    width: 10px;
+}
+a > .sf-sub-indicator {
+    top: 0.8em;
+    background-position: 0 -100px;
+}
+a:focus > .sf-sub-indicator,
+a:hover > .sf-sub-indicator,
+a:active > .sf-sub-indicator,
+li:hover > a > .sf-sub-indicator,
+li.sfHover > a > .sf-sub-indicator {
+    background-position: -10px -100px;
+}
+.sf-menu ul .sf-sub-indicator {
+    background-position: -10px 0;
+}
+.sf-menu ul a > .sf-sub-indicator {
+    background-position: 0 0;
+}
+.sf-menu ul a:focus > .sf-sub-indicator,
+.sf-menu ul a:hover > .sf-sub-indicator,
+.sf-menu ul a:active > .sf-sub-indicator,
+.sf-menu ul li:hover > a > .sf-sub-indicator,
+.sf-menu ul li.sfHover > a > .sf-sub-indicator {
+    background-position: -10px 0;
+}
+.sf-menu li:hover > ul, .sf-menu li.sfHover > ul {
+    top: 54px !important;
+}
+.sf-shadow ul.sf-shadow-off {
+    background: transparent;
+}
+.sf-menu.rtl,
+.sf-menu.rtl li {
+    float: right;
+}
+.sf-menu.rtl li:hover > ul,
+.sf-menu.rtl li.sfHover > ul {
+    left: auto;
+    right: 0;
+}
+.sf-menu.rtl li li:hover > ul,
+.sf-menu.rtl li li.sfHover > ul {
+    left: auto;
+    right: 12em;
+}
+.sf-menu.rtl ul {
+    left: auto;
+    right: 0;
+}
+.sf-menu.rtl .sf-sub-indicator {
+    left: 0.75em;
+    right: auto;
+    background: url('../images/arrows-ffffff-rtl.png') no-repeat -10px -100px;
+}
+.sf-menu.rtl a > .sf-sub-indicator {
+    top: 0.8em;
+    background-position: -10px -100px;
+}
+.sf-menu.rtl a:focus > .sf-sub-indicator,
+.sf-menu.rtl a:hover > .sf-sub-indicator,
+.sf-menu.rtl a:active > .sf-sub-indicator,
+.sf-menu.rtl li:hover > a > .sf-sub-indicator,
+.sf-menu.rtl li.sfHover > a > .sf-sub-indicator {
+    background-position: 0 -100px;
+}
+.sf-menu.rtl ul .sf-sub-indicator {
+    background-position: 0 0;
+}
+.sf-menu.rtl ul a > .sf-sub-indicator {
+    background-position: -10px 0;
+}
+.sf-menu.rtl ul a:focus > .sf-sub-indicator,
+.sf-menu.rtl ul a:hover > .sf-sub-indicator,
+.sf-menu.rtl ul a:active > .sf-sub-indicator,
+.sf-menu.rtl ul li:hover > a > .sf-sub-indicator,
+.sf-menu.rtl ul li.sfHover > a > .sf-sub-indicator {
+    background-position: 0 0;
+}
+.rtl.sf-shadow ul {
+    background: url('../images/shadow.png') no-repeat bottom left;
+    padding: 0 0 9px 8px !important;
+    -webkit-border-radius: 8px;
+    -webkit-border-top-right-radius: 0;
+    -webkit-border-bottom-left-radius: 0;
+    -moz-border-radius: 8px;
+    -moz-border-radius-topright: 0;
+    -moz-border-radius-bottomleft: 0;
+    border-radius: 8px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.sf-vertical.rtl li:hover > ul,
+.sf-vertical.rtl li.sfHover > ul {
+    left: auto;
+    right: 12em;
+}
+.sf-vertical.rtl .sf-sub-indicator {
+    background-position: -10px 0;
+}
+.sf-vertical.rtl a > .sf-sub-indicator {
+    background-position: 0 0;
+}
+.sf-vertical.rtl a:focus > .sf-sub-indicator,
+.sf-vertical.rtl a:hover > .sf-sub-indicator,
+.sf-vertical.rtl a:active > .sf-sub-indicator,
+.sf-vertical.rtl li:hover > a > .sf-sub-indicator,
+.sf-vertical.rtl li.sfHover > a > .sf-sub-indicator {
+    background-position: -10px 0;
+}
+.sf-navbar.rtl li li {
+    float: right;
+}
+.sf-navbar.rtl ul .sf-sub-indicator {
+    background-position: 0 -100px;
+}
+.sf-navbar.rtl ul a > .sf-sub-indicator {
+    background-position: -10px -100px;
+}
+.sf-navbar.rtl ul a:focus > .sf-sub-indicator,
+.sf-navbar.rtl ul a:hover > .sf-sub-indicator,
+.sf-navbar.rtl ul a:active > .sf-sub-indicator,
+.sf-navbar.rtl ul li:hover > a > .sf-sub-indicator,
+.sf-navbar.rtl ul li.sfHover > a > .sf-sub-indicator {
+    background-position: 0 -100px;
+}
+.sf-navbar.rtl ul ul .sf-sub-indicator {
+    background-position:  0 0;
+}
+.sf-navbar.rtl ul ul a > .sf-sub-indicator {
+    background-position:  -10px 0;
+}
+.sf-navbar.rtl ul ul a:focus > .sf-sub-indicator,
+.sf-navbar.rtl ul ul a:hover > .sf-sub-indicator,
+.sf-navbar.rtl ul ul a:active > .sf-sub-indicator,
+.sf-navbar.rtl ul ul li:hover > a > .sf-sub-indicator,
+.sf-navbar.rtl ul ul li.sfHover > a > .sf-sub-indicator {
+    background-position: 0 0;
+}
+.sf-navbar.rtl li li:hover > ul,
+.sf-navbar.rtl li li.sfHover > ul {
+    left: auto;
+    right: 0;
+}
+.sf-navbar.rtl li li li:hover > ul,
+.sf-navbar.rtl li li li.sfHover > ul {
+    left: auto;
+    right: 12em;
+}
+.sf-navbar.rtl > li > ul {
+    background: transparent;
+    padding: 0;
+    -moz-border-radius-bottomright: 0;
+    -moz-border-radius-topleft: 0;
+    -webkit-border-top-left-radius: 0;
+    -webkit-border-bottom-right-radius: 0;
+}
+#more {
+    color: red;
+}
+#block-views-foo-block .view-footer{
+    background: none repeat scroll 0 0 white;
+    float: left;
+    width: 260px;
+    height:375px;
+    overflow:hidden;
+
+}
+.views-slideshow-cycle-main-frame{
+    float:left;
+}
+.sliderbox{
+    height:54px;
+    padding:10px;
+    border-bottom: 1px solid #CDCDCD;
+    position:relative;
+}
+.view-foo .view-footer .view-content{
+    position:relative;
+}
+.view-foo .view-footer .view-content{
+
+}
+.sliderbox.active{
+    background:url("/sites/all/themes/collateralbmx/images/active-scrollbox.gif");
+}
+.sliderbox-title{
+    font-size:12px;
+    color:#999999;
+
+}
+.sliderbox-body{
+    color:#999999;
+    font-size:11px;
+}
+.sliderbox-title a{
+    color:#999999;
+    text-decoration:none;
+}
+.sliderbox-title a:hover{
+    text-decoration:underline;
+}
+.sliderbox.active a{
+    color:#000;
+}
+
+.more-arrow a{
+    color:#999999;
+    text-decoration:none;
+}
+.more-arrow a:hover{
+    color:#999999;
+    text-decoration:underline;
+}
+.snap-menu{
+    z-index:999999;
+    position:fixed;
+}
+#block-search-form{
+    float:right;
+}
+#block-search-form.small{
+
+}
+.collateral-search-box input{
+    border:none;
+    background: url("/sites/all/themes/collateralbmx/images/search-box-sprite.gif") no-repeat scroll 0 -21px transparent;
+    height: 21px;
+    width: 140px;
+    padding-left:8px;
+    margin-top:15px;
+}
+.collateral-search-box input.active{
+    background: url("/sites/all/themes/collateralbmx/images/search-box-sprite.gif") no-repeat scroll 0 0 transparent;
+}
+
+#zone-menu{
+    background:black;
+    min-width:320px;
+}
+#block-superfish-1{
+    background:#000;
+    height:54px;
+    float:right;
+}
+
+.small .collateral-search-box input{
+    background: url("/sites/all/themes/collateralbmx/images/search-box-sprite-small.gif") no-repeat scroll 0 -21px transparent;
+    width:100px;
+}
+.small .collateral-search-box input.active{
+    background: url("/sites/all/themes/collateralbmx/images/search-box-sprite-small.gif") no-repeat scroll 0 0 transparent;
+
+}
+.node-blog p{
+    margin-bottom:0;
+}
+.region-menu-inner{
+    float:left;
+}
+#blog-banner{
+    width:100%;
+    margin-bottom:25px;
+    height:90px;
+}
+.blog-banner-img{
+    width:250px;
+    float:left;
+}
+.blog-banner-ad img{ 
+    width:710px;
+    float:left;
+}
+.blog-banner-ad iframe {
+    float: left;
+    width: 710px;
+}
+.home-cat-box{
+    position:relative;
+    padding-right:20px;
+    width:300px;
+    height:200px;
+}
+#home-cats-container {
+    height: 200px;
+    position:relative;
+}
+#region-preface-first{
+    float:left;
+    width:960px;
+}
+#cat-pulldown-block{
+    width:300px;
+    min-height:75px;
+    height:75px;
+    overflow:hidden;
+
+}
+#cat-pulldown-block table{
+    border-top:1px solid black;
+    border-right:none;
+    border-left:none;
+}
+
+#shadow-text .cats-block-view-all a, #shadow-text .cats-block-view-all{
+    top:0px;
+
+}
+.cats-block-view-all a, .cats-block-view-all{
+    font-family:Futura W01 Bold;
+    top:5px;
+    text-shadow:none;
+    color: black;
+    font-weight:normal;
+    position:relative;
+    font-size: 10px;
+    margin-left: 6px;
+    text-decoration: none;
+    display:inline;
+}
+#latest-popular-box{
+    margin-bottom:20px;
+}
+#latest-content-sidebar, #latest-popular-sidebar{
+    border-top:1px solid black;
+    width:300px;
+    min-height:200px;
+    height:200px;
+    overflow:hidden;
+    display:none;
+}
+
+#latest-content-sidebar.set, #latest-popular-sidebar.set{
+    display:block;
+} 
+
+.red-arrow{
+    background: url("/sites/all/themes/collateralbmx/images/red-down-arrow.png") no-repeat scroll 141px 0 white;
+    border-top: 1px solid red;
+    bottom: 0;
+    height: 9px;
+    left: 0;
+    width: 300px;
+    z-index:9998;
+}
+.white-arrow-bg{
+    height:10px;
+    width:300px;
+
+}
+.latest-title a{
+    text-decoration:none;
+    color: #000000;
+    font-size: 10px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.latest-title a:hover{
+    text-decoration:underline;
+}
+.latest-author{
+    float: left;
+    padding: 2px 10px 0 0;
+}
+.latest-content p{
+    color: #000000;
+    line-height:20px;
+    margin-bottom:0;
+    display:inline;
+    font-size: 10px;
+    text-decoration: none;
+}
+#cat-pulldown-block table td, 
+#cat-pulldown-block table tr,
+#latest-popular-box table td, 
+#latest-popular-box table tr{
+    padding:5px;
+    border:none;
+}
+#cat-pulldown-block tr.even td,
+#latest-content-sidebar tr.even td, 
+#latest-popular-sidebar tr.even td {
+    background: none repeat scroll 0 0 #eeefef;
+}
+#cat-pulldown-block #shadow-text{
+    float:left;
+}
+#shadow-text.popular, #shadow-text.latest{
+    cursor:pointer;
+}
+#shadow-text.active{
+    color:grey;
+}
+.latest{
+    display: inline;
+    float: left;
+    margin-right: 105px;
+    text-decoration: none;
+}
+#featured-container{
+    height:auto;
+}
+#featured-box-container tr.even td, #featured-box-container tr.odd td{
+    background:#fff;
+}
+#featured-box-container tr{
+    height: 75px;
+    padding: 10px;
+}
+#featured-box-container table.expanded tr{
+    height:30px;
+}
+#featured-box-container table{
+    width:260px;
+    border:none;
+    float:left;
+}
+.featured-row.active .featured-title, .featured-row.active .featured-title a, .featured-row.active p{
+    color:#000;
+
+}
+#featured-box-container table tr.active td{
+    background: url("/sites/all/themes/collateralbmx/images/active-scrollbox.gif") repeat scroll 0 0 transparent;
+}
+.featured-title, .featured-title a {
+    color:#999;
+    width:140px;
+    display:block;
+    float:left;
+}
+.featured-title a {
+    font-family: 'Futura W01 Bold', 'Open Sans';
+    text-decoration:none;
+    font-size: 12px;
+}
+.featured-title a:hover {
+}
+.featured-content p {
+    color: #999999;
+    font-size: 12px;
+    font-family: 'Futura W01 Book', 'Open Sans';
+    line-height: 15px;
+    margin-bottom: 0;
+}
+.featured-img-container {
+    float: left;
+    height: 375px;
+    width: 660px;
+}
+.featured-img-container img{
+    display:none;
+}
+.featured-img-container img.active{
+    display:block;
+}
+.featured-tab.hidden{
+    visibility:hidden;
+}
+
+#featured-box-container table.expanded{
+    width:100%;
+    max-width:660px;
+}
+.featured-tab{
+    background: url("/sites/all/themes/collateralbmx/images/featured-tab-bg.gif") no-repeat scroll 0 0 transparent;
+    height: 34px;
+    position: relative;
+    top: 34px;
+    z-index: 9999;
+    width:200px;
+}
+.featured-tab .featured-tab-title{
+    color: #373737;
+    font-family: 'Futura W01 Bold', 'Open Sans';
+    font-size: 22px;
+    font-style: normal;
+    line-height: 22px;
+    margin-top: 6px;
+    position: relative;
+    text-shadow: 3px 3px 1px #B8B8B8;
+    top: 5px;
+}
+.featured-tab a.featured-view-all {
+    color:#999999;
+    font-size: 10px;
+    padding-left: 5px;
+    text-decoration: none;
+    position: relative;
+    top: 5px;
+}
+.featured-tab a.featured-view-all:hover{
+    text-decoration:underline;
+}
+.tiny-featured-thumb{
+    float:right;
+}
+#featured-box-container table.expanded .tiny-featured-thumb{
+    display:none;
+}
+#featured-box-container table.expanded .featured-title, #featured-box-container table.expanded .featured-title a{
+    width:100%;
+}
+.cats-view-all{
+    padding-left: 5px;
+    position: relative;
+    top: 13px;
+    float:left;
+}
+.cats-view-all a{
+    color: #999999;
+    font-size: 10px;
+    text-decoration: none;
+
+}
+.cats-view-all a:hover{
+    text-decoration:underline;
+}
+
+.home-cat-box h2.block-title{
+    float:left;
+}
+.home-cats-left, .home-cats-right{
+    cursor: pointer;
+    position: absolute;
+}
+.home-cats-left{
+    background: url("/sites/all/themes/collateralbmx/images/home-cats-left-arrow.png") no-repeat scroll 0 0px transparent;
+    width:24px;
+    height:38px;
+    left: -50px;
+    top: 130px;
+}
+.home-cats-right{
+    background: url("/sites/all/themes/collateralbmx/images/home-cats-right-arrow.png") no-repeat scroll 0 0px transparent;
+    width:24px;
+    height:38px;
+    top: 130px;
+    left: 300px;
+    margin-left:15px;
+}
+.home-cats-left.active{
+    background: url("/sites/all/themes/collateralbmx/images/home-cats-left-arrow.png") no-repeat scroll 0 0 transparent;
+
+}
+.home-cats-right.active{
+    background: url("/sites/all/themes/collateralbmx/images/home-cats-right-arrow.png") no-repeat scroll 0 0 transparent;
+
+}
+.collateral-search-submit{
+    display:none;
+}
+
+#region-preface-first .content{
+    overflow:hidden;
+    width:930px;
+}
+
+#section-footer, #region-footer-second{
+    margin-top:20px;
+}
+#opensans-bold a:link, #opensans-bold a:visited{
+    color:black;
+    text-decoration:none;
+}
+#opensans-bold a:hover{
+    color:red;
+    text-decoration:none;
+}
+span.field-content, .content .field-items{
+    line-height:25px;
+}
+#block-poll-blocks-255 ul.links{
+    display:none;
+}
+
+.search-results .search-snippet-info{
+    padding-left:0;
+}
+.webform-container-inline label, .webform-component-textarea label {
+    float: left;
+    font-family: 'Futura W01 Bold','Helvetica','Arial';
+    text-align: right;
+    width: 180px;
+}
+#featured-box-container .embedded-video{
+    display:none;
+}
+#featured-box-container .embedded-video.active{
+    display:block;
+}
+.blog_teaser_overlay {
+    background: none repeat scroll 0 0 black;
+    color: white;
+    padding: 5px;
+    position: relative;
+    top: -50px;
+}
+.tweetbutton{
+    float:left;
+}
+.teaser-social{
+    padding: 10px 0;
+    height: 25px;
+    display: inline;
+}
+#widgets-element-socialmedia_profile-default {
+    float: left;
+    padding-right: 15px;
+}
+.block-webform{
+    margin-bottom:40px;
+}
+.gallerytrigger{
+    cursor:pointer;
+}
+#block-poll-blocks-255{
+    background: none repeat scroll 0 0 #F7F7F7;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding: 10px;
+}
+.hanging{
+    position:fixed;
+    top:54px;
+}
+#views_infinite_scroll-ajax-loader img{
+    display:none;
+}
+#views_infinite_scroll-ajax-loader{
+    background: url("/sites/all/themes/collateralbmx/images/c-loader.gif") repeat scroll 0 0 transparent;
+    height: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center !important;
+    width: 25px;
+}
+.full-view-by{
+    font-family: 'Open Sans';
+    font-style: italic;
+}
+#latest-content-sidebar table {
+    border-left: medium none;
+    border-right: medium none;
+}
+
+.stuck{
+    position:fixed;
+    top:54px;
+}
+
+.blogteaser .views-more-link,
+.views-more-link,
+.field-content p a, 
+.node-blog a:link, 
+.node-blog a:visited{
+    color:red !important;
+    text-decoration:none;
+}
+.node-blog #blogname a:link{
+    color:black !important;
+}
+.region-user-first-inner.hidden, .region-footer-first-inner.hidden, #blog-banner.hidden{
+    display:none;
+}
+p.blogteaser, .views-field .field-content p{
+    margin-bottom:0;   
+}
+.blog_img_teaser a{
+    text-decoration:none;
+}
+.sponsor-link{
+    padding-right:10px;
+}
+.sponsors_block{
+    color:grey;
+    width:300px;
+}
+.sponsors_block a:link, .sponsors_block a:visited{
+    text-decoration:none;
+    color:grey;
+}
+.sponsors_block a:hover{
+    color:red;
+}
+#block-block-23.block,
+#block-block-22.block,
+#block-block-14.block{
+    padding-bottom:0px;
+}
+#cat-pulldown-block #shadow-text{
+    margin-bottom:0px;
+}
+#block-block-23 #bottom-blog-rule-teaser,
+#block-block-22 #bottom-blog-rule-teaser
+{
+    margin-bottom:0px;
+}
+
+#mobile-slider-container{
+    display:none;
+    width:275px;
+}
+
+#cats-slider-container #shadow-text, #mobile-slider-container #shadow-text{
+    margin-bottom: 5px;
+    text-align:left;
+}
+#mobile-slider-container{
+    margin-top:15px;
+    height:200px;
+}
+#cats-slider-container{
+    height: 250px;
+}
+#mobile-slider-container{
+    margin:auto;
+}
+
+#cats-slider-container #nextBtn {
+    position: relative;
+    right: -295px;
+    top: -120px;
+}
+
+#cats-slider-container #prevBtn{
+    position: relative;
+    right: 16px;
+    top: -120px;
+}
+
+#mobile-slider-container #prevBtn{
+    position: relative;
+    right: 16px;
+    top: -120px;
+}
+
+#cats-slider-container li, #mobile-slider-container li{
+    list-style:none;
+}
+.cats-slider-text a{
+    color: #000000;
+    font-size: 11px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#mobile-slider-container .cats-slider-text a {
+    color:#fff;
+}
+
+.cats-slider-text a:hover{
+    color:red;
+}
+
+.collateral-teaser-body-text a{
+    color:red !important;
+    font-size:16px !important;
+    text-decoration: none !important;
+}
+
+.region-sidebar-second-inner.hidden{
+    display:none;
+}
+
+#mobile-slider-container #nextBtn{
+    position: relative;
+    right: -268px;
+    top: -120px;
+}
